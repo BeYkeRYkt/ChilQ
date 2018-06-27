@@ -67,7 +67,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="2dp"
             android:layout_toLeftOf="@+id/card_view_button_remove"
-            android:background="@drawable/icon_edit"
+            android:background="@drawable/ic_icon_delete"
             android:cropToPadding="true"
             android:clickable="true"/>
 
@@ -83,7 +83,7 @@
             android:layout_marginBottom="2dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-
+            android:src="@drawable/ic_icon_delete"
             />
 
         <!-- <TextView
