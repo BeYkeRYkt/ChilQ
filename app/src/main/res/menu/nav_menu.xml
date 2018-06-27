@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+        <item
+            android:id="@+id/nav_my_emp"
+            android:title="Мои дела" />
+        <item
+            android:id="@+id/nav_create_emp"
+            android:title="Создать дело" />
+        <item
+            android:id="@+id/nav_list_child"
+            android:title="Мои дети" />
+        <item
+            android:id="@+id/nav_signout"
+            android:title="Выход" />
+</menu>
