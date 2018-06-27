@@ -15,7 +15,7 @@ public class CreateNewTaskFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_create_new_tasks, container,
                 false);
-        getActivity().setTitle("Список дел");
+        getActivity().setTitle(R.string.fragment_new_task_title);
         return rootView;
     }
 }

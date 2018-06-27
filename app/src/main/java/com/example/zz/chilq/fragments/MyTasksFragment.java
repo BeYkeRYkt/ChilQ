@@ -25,7 +25,7 @@ public class MyTasksFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_my_tasks, container,
                 false);
-        getActivity().setTitle("Мои дела");
+        getActivity().setTitle(R.string.fragment_my_tasks_title);
 
         // CardView
         ArrayList<String> myDataset = getDataSet();

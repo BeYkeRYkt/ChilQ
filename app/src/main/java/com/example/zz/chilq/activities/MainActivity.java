@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
         Class fragmentClass = null;
 
         switch (item.getItemId()) {
-            case R.id.nav_my_emp:
+            case R.id.nav_my_tasks:
                 fragmentClass = MyTasksFragment.class;
                 break;
-            case R.id.nav_create_emp:
+            case R.id.nav_create_new_task:
                 fragmentClass = CreateNewTaskFragment.class;
                 break;
-            case R.id.nav_list_child:
+            case R.id.nav_my_childrens:
                 fragmentClass = MyChildrensFragment.class;
                 break;
             case R.id.nav_signout:

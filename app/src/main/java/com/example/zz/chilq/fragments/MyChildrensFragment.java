@@ -18,7 +18,7 @@ public class MyChildrensFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_my_childs, container,
                 false);
 
-        getActivity().setTitle("Мои дети");
+        getActivity().setTitle(R.string.fragment_my_childrens_title);
         return rootView;
     }
 }
