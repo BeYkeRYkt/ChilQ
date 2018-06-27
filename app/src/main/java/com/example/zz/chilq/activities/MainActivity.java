@@ -13,9 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.zz.chilq.R;
-import com.example.zz.chilq.fragments.create_emp;
-import com.example.zz.chilq.fragments.list_child;
-import com.example.zz.chilq.fragments.my_emp;
+import com.example.zz.chilq.fragments.CreateNewTaskFragment;
+import com.example.zz.chilq.fragments.MyChildrensFragment;
+import com.example.zz.chilq.fragments.MyTasksFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.nav_my_emp:
-                fragmentClass = my_emp.class;
+                fragmentClass = MyTasksFragment.class;
                 break;
             case R.id.nav_create_emp:
-                fragmentClass = create_emp.class;
+                fragmentClass = CreateNewTaskFragment.class;
                 break;
             case R.id.nav_list_child:
-                fragmentClass = list_child.class;
+                fragmentClass = MyChildrensFragment.class;
                 break;
             case R.id.nav_signout:
                 Intent intent = new Intent(MainActivity.this, AuthActivity.class);
