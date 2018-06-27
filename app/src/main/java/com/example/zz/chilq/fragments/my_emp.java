@@ -1,24 +1,29 @@
-package com.example.zz.chilq.employment;
+package com.example.zz.chilq.fragments;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.zz.chilq.R;
+import com.example.zz.chilq.cardview.adapters.TaskRecyclerAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link create_emp.OnFragmentInteractionListener} interface
+ * {@link my_emp.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link create_emp#newInstance} factory method to
+ * Use the {@link my_emp#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class create_emp extends Fragment {
+public class my_emp extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +35,12 @@ public class create_emp extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public create_emp() {
+    // CardView
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private TaskRecyclerAdapter mAdapter;
+
+    public my_emp() {
         // Required empty public constructor
     }
 
@@ -40,11 +50,11 @@ public class create_emp extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment create_emp.
+     * @return A new instance of fragment my_emp.
      */
     // TODO: Rename and change types and number of parameters
-    public static create_emp newInstance(String param1, String param2) {
-        create_emp fragment = new create_emp();
+    public static my_emp newInstance(String param1, String param2) {
+        my_emp fragment = new my_emp();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,10 +74,28 @@ public class create_emp extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_create_emp, container,
+        View rootView = inflater.inflate(R.layout.fragment_my_emp, container,
                 false);
-        getActivity().setTitle("Список дел");
-        return  rootView;
+        getActivity().setTitle("Мои дела");
+
+        // CardView
+        ArrayList<String> myDataset = getDataSet();
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(rootView.getContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new TaskRecyclerAdapter(myDataset);
+        mRecyclerView.setAdapter(mAdapter);
+
+        return rootView;
+    }
+
+    private ArrayList<String> getDataSet() {
+        ArrayList<String> mDataSet = new ArrayList();
+        for (int i = 0; i < 15; i++) {
+            mDataSet.add(i, "Test №" + i);
+        }
+        return mDataSet;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
